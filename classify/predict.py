@@ -223,5 +223,8 @@ def main(opt):
 
 
 if __name__ == '__main__':
+    import pathlib
+    temp = pathlib.PosixPath
+    pathlib.PosixPath = pathlib.WindowsPath
     opt = parse_opt()
     main(opt)

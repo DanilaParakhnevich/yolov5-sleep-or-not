@@ -161,6 +161,9 @@ def parse_opt():
 
 
 def main(opt):
+    import pathlib
+    temp = pathlib.PosixPath
+    pathlib.PosixPath = pathlib.WindowsPath
     check_requirements(ROOT / 'requirements.txt', exclude=('tensorboard', 'thop'))
     run(**vars(opt))
 
